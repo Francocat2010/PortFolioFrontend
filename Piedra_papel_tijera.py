@@ -1,4 +1,6 @@
 import random
+import logging
+
 def jugar():
     print("'Pi' -> Piedra \n'Pa' -> Papel \n'Ti' -> Tijera")
     usuario = input("Ingrese su opcion: ").lower()
@@ -40,4 +42,49 @@ def menu():
         menu()
     
 
-menu()
+def calcular_area_cuadrado(lado):
+    # Calcular are de un cuadrado
+    return lado * lado
+
+def calcular_perimetro(*args):
+    perimetro = 0
+    for lado in args:
+        perimetro += lado
+    return perimetro
+    
+def funcion_kwargs(**kwargs):
+    print(kwargs["nombre"], kwargs["apellido"])
+    for llave, valor in kwargs.items():
+        print(f"Categoria: {llave}-> {valor}")
+    
+## CORRECTO    
+def parametros_ordenados(nombre, apellido, *args, **kwargs):
+    pass
+
+## INCORRECTO Esto es un error
+## Primero va *args y luego **kwargs
+"""
+def parametros_desordenados(nombre,apellido,**kwargs,*args):
+    pass
+"""
+#menu()
+"""
+area_cuadrado = calcular_area_cuadrado(10)
+print(area_cuadrado)
+perimetro = calcular_perimetro(1,2,3,4,5,6,7,8,8,10)
+print(perimetro)
+
+funcion_kwargs(nombre="Franco",apellido="Fernandez",edad=20,universidad="UTN",nota=8)
+
+
+
+
+nombres = ["Franco", "Gabriel", "Nico", "Nacho", "Meli"]
+for elem in nombres: # range(inicio, fin, paso)
+    print(elem)
+"""
+logging.debug("Log de debugging")
+logging.info("Log informativo")
+logging.warning("Log de advertencia")
+logging.error("Log de error")
+logging.critical("Log de error crítico")
