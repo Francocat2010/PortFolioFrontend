@@ -83,6 +83,9 @@ nombres = ["Franco", "Gabriel", "Nico", "Nacho", "Meli"]
 for elem in nombres: # range(inicio, fin, paso)
     print(elem)
 """
+
+logging.basicConfig(level=logging.DEBUG)
+
 logging.debug("Log de debugging")
 logging.info("Log informativo")
 logging.warning("Log de advertencia")
